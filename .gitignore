@@ -52,6 +52,11 @@ __pycache__/
 venv/
 .venv/
 
+# Backend specific
+backend/.env
+backend/server_mongodb_backup.py
+backend/populate_db_mongodb_legacy.py
+
 # Development tools
 chainlit.md
 .chainlit
