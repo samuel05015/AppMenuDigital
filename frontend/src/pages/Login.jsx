@@ -25,21 +25,21 @@ const Login = () => {
       const { error } = await login(email, password);
       if (error) {
         toast({
-          title: "Login failed",
+          title: "Falha no login",
           description: error.message,
           variant: "destructive"
         });
       } else {
         toast({
-          title: "Welcome back!",
-          description: "You have successfully logged in.",
+          title: "Bem-vindo de volta!",
+          description: "Você fez login com sucesso.",
         });
         navigate(from);
       }
     } catch (error) {
       toast({
-        title: "Error",
-        description: "An unexpected error occurred.",
+        title: "Erro",
+        description: "Ocorreu um erro inesperado.",
         variant: "destructive"
       });
     } finally {
@@ -56,8 +56,8 @@ const Login = () => {
               RB
             </div>
           </div>
-          <CardTitle className="text-3xl font-bold">Welcome Back</CardTitle>
-          <p className="text-gray-600">Sign in to your Royal Burguer account</p>
+          <CardTitle className="text-3xl font-bold">Bem-vindo de Volta</CardTitle>
+          <p className="text-gray-600">Entre na sua conta Royal Burguer</p>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -66,7 +66,7 @@ const Login = () => {
               <Input
                 id="email"
                 type="email"
-                placeholder="your@email.com"
+                placeholder="seu@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -74,7 +74,7 @@ const Login = () => {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">Senha</Label>
               <Input
                 id="password"
                 type="password"
@@ -90,15 +90,15 @@ const Login = () => {
               disabled={loading}
               className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6 text-lg"
             >
-              {loading ? 'Signing in...' : 'Sign In'}
+              {loading ? 'Entrando...' : 'Entrar'}
             </Button>
           </form>
 
           <div className="mt-6 text-center">
             <p className="text-gray-600">
-              Don't have an account?{' '}
+              Não tem uma conta?{' '}
               <Link to="/signup" className="text-red-600 hover:text-red-700 font-semibold hover:underline">
-                Sign up
+                Cadastre-se
               </Link>
             </p>
           </div>

@@ -29,14 +29,14 @@ const Cart = () => {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center space-y-4">
           <ShoppingBag className="w-24 h-24 text-gray-300 mx-auto" />
-          <h2 className="text-3xl font-bold text-gray-900">Your cart is empty</h2>
-          <p className="text-gray-600 text-lg">Add some delicious items to get started!</p>
+          <h2 className="text-3xl font-bold text-gray-900">Seu carrinho está vazio</h2>
+          <p className="text-gray-600 text-lg">Adicione alguns itens deliciosos para começar!</p>
           <Button
             onClick={() => navigate('/menu')}
             className="bg-red-600 hover:bg-red-700 text-white font-bold mt-4"
             size="lg"
           >
-            Browse Menu
+            Ver Cardápio
           </Button>
         </div>
       </div>
@@ -47,8 +47,8 @@ const Cart = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">Your Cart</h1>
-          <p className="text-xl text-gray-100">{cart.length} item(s) in your cart</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-2">Seu Carrinho</h1>
+          <p className="text-xl text-gray-100">{cart.length} item(ns) no seu carrinho</p>
         </div>
       </div>
 
@@ -119,7 +119,7 @@ const Cart = () => {
                           </Button>
                         </div>
                         <span className="text-xl font-bold text-red-600">
-                          ${(item.price * item.quantity).toFixed(2)}
+                          R${(item.price * item.quantity).toFixed(2)}
                         </span>
                       </div>
                     </div>
@@ -133,7 +133,7 @@ const Cart = () => {
               onClick={() => navigate('/menu')}
               className="w-full border-2 border-gray-300 hover:border-red-600 hover:bg-red-50 font-semibold"
             >
-              Add More Items
+              Adicionar Mais Itens
             </Button>
           </div>
 
@@ -141,27 +141,27 @@ const Cart = () => {
           <div className="lg:col-span-1">
             <Card className="sticky top-24">
               <CardContent className="p-6 space-y-4">
-                <h2 className="text-2xl font-bold text-gray-900">Order Summary</h2>
+                <h2 className="text-2xl font-bold text-gray-900">Resumo do Pedido</h2>
                 
                 <div className="space-y-3 border-t pt-4">
                   <div className="flex justify-between text-gray-600">
                     <span>Subtotal</span>
-                    <span className="font-semibold">${subtotal.toFixed(2)}</span>
+                    <span className="font-semibold">R${subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
-                    <span>Tax (8%)</span>
-                    <span className="font-semibold">${tax.toFixed(2)}</span>
+                    <span>Taxa (8%)</span>
+                    <span className="font-semibold">R${tax.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
-                    <span>Delivery Fee</span>
-                    <span className="font-semibold">${delivery.toFixed(2)}</span>
+                    <span>Taxa de Entrega</span>
+                    <span className="font-semibold">R${delivery.toFixed(2)}</span>
                   </div>
                 </div>
 
                 <div className="border-t pt-4">
                   <div className="flex justify-between text-xl font-bold text-gray-900">
                     <span>Total</span>
-                    <span className="text-red-600">${total.toFixed(2)}</span>
+                    <span className="text-red-600">R${total.toFixed(2)}</span>
                   </div>
                 </div>
 
@@ -169,13 +169,13 @@ const Cart = () => {
                   onClick={handleCheckout}
                   className="w-full bg-red-600 hover:bg-red-700 text-white font-bold text-lg py-6 mt-4"
                 >
-                  Proceed to Checkout
+                  Finalizar Pedido
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
 
                 {!user && (
                   <p className="text-sm text-gray-600 text-center">
-                    You'll need to <Link to="/login" className="text-red-600 hover:underline font-semibold">sign in</Link> to complete your order
+                    Você precisará <Link to="/login" className="text-red-600 hover:underline font-semibold">fazer login</Link> para completar seu pedido
                   </p>
                 )}
               </CardContent>

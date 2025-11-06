@@ -40,13 +40,13 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             <Link to="/menu" className="hover:text-yellow-400 transition-colors font-medium">
-              Menu
+              Cardápio
             </Link>
             <Link to="/deals" className="hover:text-yellow-400 transition-colors font-medium">
-              Deals
+              Ofertas
             </Link>
             <Link to="/stores" className="hover:text-yellow-400 transition-colors font-medium">
-              Locations
+              Localizações
             </Link>
           </div>
 
@@ -71,18 +71,18 @@ const Navbar = () => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56" align="end">
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={() => navigate('/orders')}>
-                    My Orders
+                    Meus Pedidos
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate('/profile')}>
-                    Profile
+                    Perfil
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleLogout} className="text-red-600">
                     <LogOut className="w-4 h-4 mr-2" />
-                    Logout
+                    Sair
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -116,21 +116,21 @@ const Navbar = () => {
               className="block hover:text-yellow-400 transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Menu
+              Cardápio
             </Link>
             <Link
               to="/deals"
               className="block hover:text-yellow-400 transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Deals
+              Ofertas
             </Link>
             <Link
               to="/stores"
               className="block hover:text-yellow-400 transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Locations
+              Localizações
             </Link>
           </div>
         </div>

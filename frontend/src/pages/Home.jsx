@@ -20,10 +20,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold">
-              Welcome to <span className="text-yellow-400">Royal Burguer</span>
+              Bem-vindo ao <span className="text-yellow-400">Royal Burguer</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-100 max-w-2xl mx-auto">
-              Experience the royal taste with our flame-grilled burgers made from premium ingredients
+              Experimente o sabor real com nossos hambúrgueres grelhados feitos com ingredientes premium
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button
@@ -32,7 +32,7 @@ const Home = () => {
                 className="bg-yellow-400 hover:bg-yellow-500 text-red-600 font-bold text-lg px-8 py-6 transition-all transform hover:scale-105"
               >
                 <Link to="/menu">
-                  Order Now <ArrowRight className="ml-2 w-5 h-5" />
+                  Peça Agora <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
               <Button
@@ -41,7 +41,7 @@ const Home = () => {
                 variant="outline"
                 className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-red-600 font-bold text-lg px-8 py-6 transition-all"
               >
-                <Link to="/deals">View Deals</Link>
+                <Link to="/deals">Ver Ofertas</Link>
               </Button>
             </div>
           </div>
@@ -52,8 +52,8 @@ const Home = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Hot Deals</h2>
-            <p className="text-gray-600 text-lg">Don't miss out on our amazing offers!</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Ofertas Quentes</h2>
+            <p className="text-gray-600 text-lg">Não perca nossas ofertas incríveis!</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -66,7 +66,7 @@ const Home = () => {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-full font-bold">
-                    Save ${(deal.originalPrice - deal.price).toFixed(2)}
+                    Economize R${(deal.originalPrice - deal.price).toFixed(2)}
                   </div>
                 </div>
                 <CardContent className="p-6">
@@ -74,11 +74,11 @@ const Home = () => {
                   <p className="text-gray-600 mb-4">{deal.description}</p>
                   <div className="flex items-center justify-between">
                     <div>
-                      <span className="text-3xl font-bold text-red-600">${deal.price}</span>
-                      <span className="text-gray-400 line-through ml-2">${deal.originalPrice}</span>
+                      <span className="text-3xl font-bold text-red-600">R${deal.price}</span>
+                      <span className="text-gray-400 line-through ml-2">R${deal.originalPrice}</span>
                     </div>
                     <Button className="bg-red-600 hover:bg-red-700 text-white">
-                      Order Now
+                      Peça Agora
                     </Button>
                   </div>
                 </CardContent>
@@ -92,8 +92,8 @@ const Home = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Fan Favorites</h2>
-            <p className="text-gray-600 text-lg">Our most loved burgers</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Favoritos dos Fãs</h2>
+            <p className="text-gray-600 text-lg">Nossos hambúrgueres mais amados</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -114,12 +114,12 @@ const Home = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{item.name}</h3>
                   <p className="text-gray-600 text-sm mb-4 line-clamp-2">{item.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-red-600">${item.price}</span>
+                    <span className="text-2xl font-bold text-red-600">R${item.price}</span>
                     <Button
                       asChild
                       className="bg-red-600 hover:bg-red-700 text-white"
                     >
-                      <Link to={`/menu/${item.id}`}>Order</Link>
+                      <Link to={`/menu/${item.id}`}>Pedir</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -134,7 +134,7 @@ const Home = () => {
               className="bg-red-600 hover:bg-red-700 text-white font-bold"
             >
               <Link to="/menu">
-                View Full Menu <ArrowRight className="ml-2 w-5 h-5" />
+                Ver Cardápio Completo <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
           </div>
@@ -145,8 +145,8 @@ const Home = () => {
       <section className="py-16 bg-gradient-to-br from-yellow-50 to-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Royal Burguer?</h2>
-            <p className="text-gray-600 text-lg">Quality and service fit for royalty</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Por Que Royal Burguer?</h2>
+            <p className="text-gray-600 text-lg">Qualidade e serviço dignos de realeza</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -154,9 +154,9 @@ const Home = () => {
               <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Fast Delivery</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Entrega Rápida</h3>
               <p className="text-gray-600">
-                Hot and fresh burgers delivered to your door in 30 minutes or less
+                Hambúrgueres quentes e frescos entregues na sua porta em 30 minutos ou menos
               </p>
             </Card>
             
@@ -164,9 +164,9 @@ const Home = () => {
               <div className="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Star className="w-8 h-8 text-yellow-600 fill-current" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Premium Quality</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Qualidade Premium</h3>
               <p className="text-gray-600">
-                100% beef patties, fresh vegetables, and our signature sauces
+                100% carne bovina, vegetais frescos e nossos molhos exclusivos
               </p>
             </Card>
             
@@ -174,9 +174,9 @@ const Home = () => {
               <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Multiple Locations</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Múltiplas Localizações</h3>
               <p className="text-gray-600">
-                Find us at convenient locations across the city
+                Encontre-nos em locais convenientes por toda a cidade
               </p>
             </Card>
           </div>

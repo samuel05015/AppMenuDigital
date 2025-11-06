@@ -13,12 +13,12 @@ const Menu = () => {
   const navigate = useNavigate();
 
   const categories = [
-    { id: 'all', name: 'All' },
-    { id: 'burgers', name: 'Burgers' },
-    { id: 'chicken', name: 'Chicken' },
-    { id: 'sides', name: 'Sides' },
-    { id: 'drinks', name: 'Drinks' },
-    { id: 'desserts', name: 'Desserts' }
+    { id: 'all', name: 'Todos' },
+    { id: 'burgers', name: 'Hambúrgueres' },
+    { id: 'chicken', name: 'Frango' },
+    { id: 'sides', name: 'Acompanhamentos' },
+    { id: 'drinks', name: 'Bebidas' },
+    { id: 'desserts', name: 'Sobremesas' }
   ];
 
   const filteredItems = menuItems.filter(item => {
@@ -33,8 +33,8 @@ const Menu = () => {
       {/* Header */}
       <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Menu</h1>
-          <p className="text-xl text-gray-100">Explore our delicious selection</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Nosso Cardápio</h1>
+          <p className="text-xl text-gray-100">Explore nossa deliciosa seleção</p>
         </div>
       </div>
 
@@ -45,7 +45,7 @@ const Menu = () => {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <Input
               type="text"
-              placeholder="Search for burgers, sides, drinks..."
+              placeholder="Buscar hambúrgueres, acompanhamentos, bebidas..."
               className="pl-10 py-6 text-lg"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -91,7 +91,7 @@ const Menu = () => {
               <CardContent className="p-5">
                 <div className="flex items-start justify-between mb-2">
                   <h3 className="text-lg font-bold text-gray-900">{item.name}</h3>
-                  <span className="text-xl font-bold text-red-600">${item.price}</span>
+                  <span className="text-xl font-bold text-red-600">R${item.price}</span>
                 </div>
                 <p className="text-gray-600 text-sm mb-4 line-clamp-2">{item.description}</p>
                 <Button
@@ -101,7 +101,7 @@ const Menu = () => {
                     navigate(`/menu/${item.id}`);
                   }}
                 >
-                  Add to Cart
+                  Adicionar ao Carrinho
                 </Button>
               </CardContent>
             </Card>
@@ -110,7 +110,7 @@ const Menu = () => {
 
         {filteredItems.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-gray-500 text-xl">No items found matching your search.</p>
+            <p className="text-gray-500 text-xl">Nenhum item encontrado para sua busca.</p>
           </div>
         )}
       </div>

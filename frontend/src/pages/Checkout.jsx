@@ -47,8 +47,8 @@ const Checkout = () => {
       const orderId = `ORD-${Date.now()}`;
       clearCart();
       toast({
-        title: "Order placed successfully!",
-        description: `Your order #${orderId} has been confirmed.`,
+        title: "Pedido realizado com sucesso!",
+        description: `Seu pedido #${orderId} foi confirmado.`,
       });
       navigate('/orders');
       setLoading(false);
@@ -69,8 +69,8 @@ const Checkout = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">Checkout</h1>
-          <p className="text-xl text-gray-100">Complete your order</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-2">Finalizar Pedido</h1>
+          <p className="text-xl text-gray-100">Complete seu pedido</p>
         </div>
       </div>
 
@@ -84,13 +84,13 @@ const Checkout = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <UserIcon className="w-5 h-5 mr-2 text-red-600" />
-                    Contact Information
+                    Informações de Contato
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="fullName">Full Name</Label>
+                      <Label htmlFor="fullName">Nome Completo</Label>
                       <Input
                         id="fullName"
                         name="fullName"
@@ -100,7 +100,7 @@ const Checkout = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
+                      <Label htmlFor="phone">Telefone</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -119,7 +119,7 @@ const Checkout = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <MapPin className="w-5 h-5 mr-2 text-red-600" />
-                    Delivery Information
+                    Informações de Entrega
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -129,18 +129,18 @@ const Checkout = () => {
                   >
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="delivery" id="delivery" />
-                      <Label htmlFor="delivery" className="cursor-pointer">Delivery ($3.99)</Label>
+                      <Label htmlFor="delivery" className="cursor-pointer">Entrega (R$3.99)</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="pickup" id="pickup" />
-                      <Label htmlFor="pickup" className="cursor-pointer">Pickup (Free)</Label>
+                      <Label htmlFor="pickup" className="cursor-pointer">Retirada (Grátis)</Label>
                     </div>
                   </RadioGroup>
 
                   {formData.deliveryType === 'delivery' && (
                     <div className="space-y-4 pt-4 border-t">
                       <div className="space-y-2">
-                        <Label htmlFor="address">Street Address</Label>
+                        <Label htmlFor="address">Endereço</Label>
                         <Input
                           id="address"
                           name="address"
@@ -161,7 +161,7 @@ const Checkout = () => {
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="zipCode">ZIP Code</Label>
+                          <Label htmlFor="zipCode">CEP</Label>
                           <Input
                             id="zipCode"
                             name="zipCode"
@@ -181,7 +181,7 @@ const Checkout = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <CreditCard className="w-5 h-5 mr-2 text-red-600" />
-                    Payment Information
+                    Informações de Pagamento
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -191,18 +191,18 @@ const Checkout = () => {
                   >
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="card" id="card" />
-                      <Label htmlFor="card" className="cursor-pointer">Credit/Debit Card</Label>
+                      <Label htmlFor="card" className="cursor-pointer">Cartão de Crédito/Débito</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="cash" id="cash" />
-                      <Label htmlFor="cash" className="cursor-pointer">Cash on Delivery</Label>
+                      <Label htmlFor="cash" className="cursor-pointer">Dinheiro na Entrega</Label>
                     </div>
                   </RadioGroup>
 
                   {formData.paymentMethod === 'card' && (
                     <div className="space-y-4 pt-4 border-t">
                       <div className="space-y-2">
-                        <Label htmlFor="cardNumber">Card Number</Label>
+                        <Label htmlFor="cardNumber">Número do Cartão</Label>
                         <Input
                           id="cardNumber"
                           name="cardNumber"
@@ -214,18 +214,18 @@ const Checkout = () => {
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="cardExpiry">Expiry Date</Label>
+                          <Label htmlFor="cardExpiry">Data de Validade</Label>
                           <Input
                             id="cardExpiry"
                             name="cardExpiry"
-                            placeholder="MM/YY"
+                            placeholder="MM/AA"
                             value={formData.cardExpiry}
                             onChange={handleChange}
                             required
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="cardCVC">CVC</Label>
+                          <Label htmlFor="cardCVC">CVV</Label>
                           <Input
                             id="cardCVC"
                             name="cardCVC"
@@ -246,7 +246,7 @@ const Checkout = () => {
             <div className="lg:col-span-1">
               <Card className="sticky top-24">
                 <CardHeader>
-                  <CardTitle>Order Summary</CardTitle>
+                  <CardTitle>Resumo do Pedido</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2 max-h-60 overflow-y-auto">
@@ -255,7 +255,7 @@ const Checkout = () => {
                         <span className="text-gray-600">
                           {item.quantity}x {item.name}
                         </span>
-                        <span className="font-semibold">${(item.price * item.quantity).toFixed(2)}</span>
+                        <span className="font-semibold">R${(item.price * item.quantity).toFixed(2)}</span>
                       </div>
                     ))}
                   </div>
@@ -263,22 +263,22 @@ const Checkout = () => {
                   <div className="space-y-2 border-t pt-4">
                     <div className="flex justify-between text-gray-600">
                       <span>Subtotal</span>
-                      <span className="font-semibold">${subtotal.toFixed(2)}</span>
+                      <span className="font-semibold">R${subtotal.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between text-gray-600">
-                      <span>Tax</span>
-                      <span className="font-semibold">${tax.toFixed(2)}</span>
+                      <span>Taxa</span>
+                      <span className="font-semibold">R${tax.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between text-gray-600">
-                      <span>{formData.deliveryType === 'delivery' ? 'Delivery' : 'Pickup'}</span>
-                      <span className="font-semibold">${delivery.toFixed(2)}</span>
+                      <span>{formData.deliveryType === 'delivery' ? 'Entrega' : 'Retirada'}</span>
+                      <span className="font-semibold">R${delivery.toFixed(2)}</span>
                     </div>
                   </div>
 
                   <div className="border-t pt-4">
                     <div className="flex justify-between text-xl font-bold">
                       <span>Total</span>
-                      <span className="text-red-600">${total.toFixed(2)}</span>
+                      <span className="text-red-600">R${total.toFixed(2)}</span>
                     </div>
                   </div>
 
@@ -287,7 +287,7 @@ const Checkout = () => {
                     disabled={loading}
                     className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6 text-lg"
                   >
-                    {loading ? 'Processing...' : 'Place Order'}
+                    {loading ? 'Processando...' : 'Fazer Pedido'}
                   </Button>
                 </CardContent>
               </Card>
